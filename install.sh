@@ -38,6 +38,7 @@ fi
 # only supports Volumio and moOde at present
 VOLUMIO_CHECK=/usr/local/bin/volumio		
 MOODE_CHECK=/usr/local/bin/moodeutl		
+MOPIDY_CHECK=/usr/local/bin/mopidy
 
 if [[ -f ${VOLUMIO_CHECK} ]]
 then
@@ -47,6 +48,10 @@ elif [[ -f ${MOODE_CHECK} ]]
 then
     HOME_USER=pi
     HOME_DIR=/home/pi
+elif [[ -f ${MOPIDY_CHECK} ]]
+then
+    HOME_USER=samsan        # Find user calling sudo
+    HOME_DIR=/home/samsan   # And his home dir
 else
     echo "Cannot determine variant (volumio or moOde)"
     exit 1

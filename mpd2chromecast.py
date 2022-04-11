@@ -62,7 +62,8 @@ def determine_platform_variant():
 
     platform_name_dict = {
             'moodeutl' : 'moOde',
-            'volumio' : 'Volumio',
+            'mopidy' : 'Mopidy',
+            'volumio' : 'Volumio'
             }
 
     gv_platform_variant = 'Unknown'
