@@ -16,6 +16,7 @@ import json
 import socket
 import pathlib
 import traceback
+import re
 
 
 def log_message(verbose,
@@ -543,6 +544,11 @@ def web_server():
 def mpd_file_to_url(mpd_file):
     global gv_server_ip
     global gv_cast_port
+
+    # Deal with Mopidy URI schemes
+    # Replace scheme
+    regex = r"^[^:]+:"
+    mpd_file = re.sub(regex, "", mpf_file, 1)
 
     # Radio/external stream
     # URL will start with http
